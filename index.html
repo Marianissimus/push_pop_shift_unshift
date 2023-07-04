@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Array methods: push, pop, shift, unshift</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prism.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1 id="article-title" class="center">Push, pop, shift, & unshift</h1>
+        <h2 class="center">
+          2 P’s and another pair: how to better remember 4 JavaScript methods
+        </h2>
+      </header>
+      <section id="intro">
+        <h3>
+          JavaScript has many built-in, helpful methods. But how do you remember which does what? Here are some tips for the array methods ‘push’, ‘pop’, ‘shift’ and ‘unshift’.
+        </h3>
+      </section>
+      <section>
+        <h1>Push</h1>
+        <h2>
+          What is ‘pushing’? Well, the action of adding, placing something into something else.
+        </h2>
+        <p>
+          To remember this one, just think to the words of the unrelated, but famous 90s song ‘Push it’ from the hip hop group Salt-N-Pepa. The video can serve as a reminder 😉.
+        </p>
+        <div class="video-container">
+          <div class="video">
+            <iframe type="text/html" src="https://www.dailymotion.com/embed/video/x2bdrg" width="100%" height="100%" allowfullscreen title="Dailymotion Video Player" >
+            </iframe>
+          </div>
+          <p class="video-text">
+            Ah, push it
+          </p>
+        </div>
+        <p>
+          For an even more visual approach, look at the act of pushing someone into a crowded train in Japan. Yes, they have train assistants called ‘professional pushers’ that will, well, push people into the train.
+        </p>
+        <p>
+          <figure>
+            <img src="assets/push.jpg" alt="pushing into train" />
+            <figcaption>Push it good</figcaption>
+          </figure>
+        </p>
+        <p>
+          For what concerns us, ‘pushing’ is adding someone at the end of the already existing crowd in the train.
+        </p>
+        <p>
+          The same goes for JavaScript: ‘pushing’ is adding something at the end of the array. It doesn’t change the array <i>except</i> for adding a last item.
+        </p>
+        <p>
+          Just like you going to Mac for a burger: when you decide to stay in line, you just add to it.
+        </p>
+        <p>Let’s see some PUSH code in action:</p>
+        <p>
+          <pre><code class="language-javascript">const arr = ['a', 'b', 'c'];
+arr.push('d');
+console.log(arr); // [ 'a', 'b', 'c', 'd' ]</code></pre>
+        </p>
+        <p>
+          And here's a visual representation of what's going on:
+        </p>
+        <p>
+          <figure>
+            <img src="assets/push01.png" alt="push method" />
+            <figcaption>So this array...</figcaption>
+          </figure>
+        </p>
+        <p>
+          <figure>
+            <img src="assets/push02.png" class="img-larger  grey-background" alt="push method after" />
+            <figcaption>Becomes this array!</figcaption>
+          </figure>
+        </p>
+      </section>
+      <section>
+        <h1>Pop</h1>
+        <h2>
+          For JavaScript, the opposite of ‘push’ is ‘pop’ - removing an item from the end of the line, illustrated by the image below.
+        </h2>
+        <p>
+          <figure>
+            <img src="assets/pop.jpg" alt="pop illustration" />
+            <figcaption>Ha ha ha, I kill you!</figcaption>
+          </figure>
+        </p>
+        <p>
+          Now, let’s get back to this train example. Imagine you’re a professional train assistant and you decide you need to take someone out from the train - to pop him out.
+        </p>
+        <p>
+          Who would it be? Exactly, the very last person in the group!
+        </p>
+        <p>
+          Now, when you take this person out, what happens to the rest of the group in the train? Nothing - except for the last item being removed, the group stays as is.
+        </p>
+        <p>
+          So think of the train example and you’ll remember what these two methods do: push adds to the end of the array, pop removes from the end of it. Nothing else changes inside of the array.
+        </p>
+        <p>
+          Here's a code sample:
+        </p>
+        <p>
+          <pre><code class="language-javascript">const arr = ['a', 'b', 'c', 'd'];
+arr.pop(); // no argument taken
+console.log(arr); // [ 'a', 'b', 'c', ]</code></pre>
+        </p>
+        <p>It's interesting to note that .pop() returns the removed element, if needed:
+        </p>
+        <p>
+          <pre><code class="language-javascript">const arr = [1, 2, 3];
+const removed = arr.pop();
+console.log(removed); // 3</code></pre>
+        </p>
+        <p>To visually represent the pop method:</p>
+        <p>
+          <figure>
+            <img src="assets/pop01.png" class="img-larger grey-background" alt="pop method before" />
+            <figcaption>This array...</figcaption>
+          </figure>
+        </p>
+        <p>
+          <figure>
+            <img src="assets/push01.png" class="grey-background" alt="pop method after" />
+            <figcaption>becomes this array!</figcaption>
+          </figure>
+        </p>
+        <p>
+          But what if you were a really crazy train assistant and wanted to take out the very first person sitting inside the train? So the one at the very beginning? Worry not, there’s an action for you, too.
+        </p>
+      </section>
+      <section>
+        <h1>Shift</h1>
+        <h2>Or how you remove from the beginning of an array</h2>
+        <p>
+          Yes, but why this name, ‘shift’? The Cambridge dictionary <a href="https://dictionary.cambridge.org/dictionary/english/shift">definition of shift</a> reads: ‘to change direction or move from one position, or place to another’. Even if this word may seem weird at first, it will help you understand what is happening inside an array when you use it.
+        </p>
+        <p>
+          Think of the queue at McDonald's: there always must be one person at the front of the line. When that person moves out, everybody shifts places. When the 1st person takes their order, the 2nd person becomes the 1st, the 3rd becomes the 2nd, and so on.
+        </p>
+        <p>
+          <figure>
+            <img src="assets/line.gif" alt="line" />
+            <figcaption>You know how lines work, right?</figcaption>
+          </figure>
+        </p>
+        <p>
+          See, when you remove an item from the beginning of an array, you affect all the items in the array by shifting (moving) them a place.
+        </p>
+        <p>
+          So ‘shifting’ definitely affects every item in the array. Because of moving (actually changing index of) every item in an array, this action is also costly in terms of performance, especially with larger arrays.
+        </p>
+        <p>
+          Here's a visual representation:
+        </p>
+        <p>
+          <figure>
+            <img src="assets/shift01.png" class="img-larger grey-background" alt="shift method before" />
+            <figcaption>Every item will be shifting places</figcaption>
+          </figure>
+        </p>
+        <p>
+          <figure>
+            <img src="assets/shift02.png" class="img-larger grey-background" alt="shift method before" />
+            <figcaption>They all shifted!</figcaption>
+          </figure>
+        </p>
+        <p>
+          <figure>
+            <img src="assets/shift03.png" class="img-larger grey-background" alt="shift method before" />
+            <figcaption>And here's the result</figcaption>
+          </figure>
+        </p>
+        <p>
+          This is what the code looks like:
+        </p>
+        <p>
+          <pre><code class="language-javascript">const arr = ['a', 'b', 'c', 'd'];
+arr.shift();
+console.log(arr); // [ "b", "c", "d" ]</code></pre>
+        </p>
+        <p>
+          Just like 'pop', shift also returns the removed element, when needed:
+        </p>
+        <p>
+          <pre><code class="language-javascript">const arr = ['a', 'b', 'c', 'd'];
+const removed = arr.shift();
+console.log(removed); // 'a'</code></pre>
+        </p>
+        <p>
+          But what if you want to <em>add</em> in front of the line? We've got you covered:
+        </p>
+      </section>
+      <section>
+        <h1>Unshift</h1>
+        <h2>
+          Think of it like ‘undoing shift’. So if shift is about removing from the beginning, unshift is about adding at the beginning.
+        </h2>
+        <p>
+          Let’s get back to the McDonald's example: if you were the first person waiting in queue, and someone else came in front of you, you would not only become ‘hangry’, but also the 2nd person in line now. And the person behind you wouldn’t be the 2nd any more, but the 3rd, and so on.
+        </p>
+        <p>
+          <figure>
+            <img src="assets/unshift.gif" alt="unshifting" />
+            <figcaption>Cartman Unshifting</figcaption>
+          </figure>
+        </p>
+        <p>
+          So unshifting is just like shifting everybody (every item) around, but in the opposite direction.
+        </p>
+        <p>Here's a visual representation of the unshift method:</p>
+        <p>
+          <figure>
+            <img src="assets/unshift01.png" class="img-larger grey-background" alt="shift method before" />
+            <figcaption>Unshift = Shifting places, but in the opposite direction</figcaption>
+          </figure>
+        </p>
+        <p>
+          <figure>
+            <img src="assets/unshift02.png" class="img-larger grey-background" alt="shift method before" />
+            <figcaption>They all unshifted!</figcaption>
+          </figure>
+        </p>
+        <p>
+          It's nice to note that while the remove methods (shift and pop) deal with only 1 item, the add methods (push and unshift) can add as many elements as desired. Here's an example with unshift:
+        </p>
+        <p>
+          <pre><code class="language-javascript">const arr = ['e', 'n', 'd'];
+arr.unshift('t', 'h', 'e', ' ',);
+console.log(arr); // [ "t", "h", "e", " ", "e", "n", "d" ]
+console.log(arr.join('')) // bonus :)</code></pre>
+        </p>
+        <p>A rightful question could arise: how could one better remember the shift and unshift methods?
+        <p>
+          For me, the best way to always keep them in mind was written in <a href="https://stackoverflow.com/questions/19107752/javascript-shift-unshift-mnemonics#comment60145741_19107752">this Stack Overflow comment:</a>
+        </p>
+        <p>
+            <figure>
+              <a href="https://stackoverflow.com/questions/19107752/javascript-shift-unshift-mnemonics#comment60145741_19107752">
+                <img src="assets/stackoverflow.jpg" alt="unshifting" />
+              </a>
+              <figcaption>Pure genius</figcaption>
+            </figure>
+          </a>
+        </p>
+      </section>
+      <footer>
+        <p>
+          Here you are: some tips to remember 4 helpful and often used native JavaScript methods.
+        </p>
+        <p>
+          Now the names of the shift' and 'unshift methods can maybe help you remember they both move (shift) all items from their original places, so you'll use them with care, because of the associated performance cost.
+        </p>
+        <p>
+          In terms of the Big O Notation, shift and unshift have an O(n) complexity because they impact all indexes in the array, meaning the running time increases linearly with the size of the array.
+        </p>
+        <p>
+          Push and pop, on the other hand, are safe to use with their constant, always identical and fast, O(1) complexity.
+        </p>
+        <p>
+          Hope you find this info helpful and ‘push it’ to someone else, too.
+        </p>
+      </footer>
+    </article>
+    <script src="prism.js"></script>
+  </body>
+</html>
